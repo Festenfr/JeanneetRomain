@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Sometype Mono';
+  font-display: swap;
+  src: local('Sometype-Mono'), local('Sometype Mono Regular'),
+    url('~assets/fonts/SometypeMono-Regular.otf') format('opentype'),
+    url('~assets/fonts/SometypeMono-Regular.ttf') format('truetype');
+    font-weight: 300;
+  font-style: normal;
+}

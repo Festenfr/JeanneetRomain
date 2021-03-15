@@ -1,4 +1,4 @@
-# drag
+# nuxt-starter
 
 ## Build Setup
 

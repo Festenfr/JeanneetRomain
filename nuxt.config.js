@@ -1,40 +1,48 @@
 export default {
-    // Global page headers (https://go.nuxtjs.dev/config-head)
+    publicRuntimeConfig: {
+        strapiBaseUrl: process.env.API_URL || 'http://localhost:1337',
+        graphqlUrl: process.env.GRAPHQL_URL || 'http://localhost:1337/graphql',
+        awsUrl:
+            process.env.AWS_URL ||
+            'https://jeanneetromainlocal.s3.eu-west-3.amazonaws.com/'
+    },
+    // server: {
+    //     port: 8000, // default: 3000
+    //     host: '0.0.0.0' // default: localhost
+    // }, // other configs
     head: {
-        title: 'drag',
+        title: 'nuxt-starter',
         meta: [
             { charset: 'utf-8' },
             {
                 name: 'viewport',
-                content: 'width=device-width, initial-scale=1'
-            },
-            { hid: 'description', name: 'description', content: '' }
+                content:
+                    'width=device-width, initial-scale=1, viewport-fit=cover'
+            }
         ],
-        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+        link: [
+            {
+                rel: 'preconnect',
+                href:
+                    process.env.AWS_URL ||
+                    'https://jeanneetromainlocal.s3.eu-west-3.amazonaws.com/'
+            }
+        ]
     },
-
-    // Global CSS (https://go.nuxtjs.dev/config-css)
-    css: ['./assets/main.scss'],
-
-    // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-    plugins: [],
-
-    // Auto import components (https://go.nuxtjs.dev/config-components)
-    components: true,
-
-    // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-    buildModules: [
-        '@nuxtjs/style-resources',
-        // https://go.nuxtjs.dev/eslint
-        '@nuxtjs/eslint-module'
-    ],
-
-    // Modules (https://go.nuxtjs.dev/config-modules)
-    modules: [],
+    css: [{ src: '~/assets/scss/main.scss', lang: 'scss' }],
+    plugins: ['~/plugins/vuex-router-sync.js', '~/plugins/plugins.client.js'],
+    buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/style-resources'],
+    modules: ['@nuxtjs/pwa', '@nuxtjs/svg'],
+    build: {
+        extend(config) {
+            config.module.rules.push({
+                test: /\.(glsl|frag|vert|fs|vs)$/,
+                loader: 'shader-loader',
+                exclude: /(node_modules)/
+            })
+        }
+    },
     styleResources: {
         scss: ['~/assets/scss/includes.scss']
-    },
-
-    // Build Configuration (https://go.nuxtjs.dev/config-build)
-    build: {}
+    }
 }

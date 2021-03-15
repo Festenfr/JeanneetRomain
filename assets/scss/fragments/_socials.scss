@@ -1,0 +1,24 @@
+.socials {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    user-select: none;
+    bottom: vw(30);
+    left: 50%;
+    height: vw(40);
+    transform: translateX(-50%);
+    z-index: 2;
+    li + li {
+        margin-left: vw(20);
+    }
+    font-size: vw(14);
+    font-family: $sometype;
+    a {
+        opacity: 0;
+        color: $primary;
+        letter-spacing: vw(1);
+        &:hover {
+            opacity: 0.4;
+        }
+    }
+}

@@ -16,7 +16,8 @@ module.exports = {
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
     },
     globals: {
-        $nuxt: true
+        $nuxt: true,
+        gsap: true
     },
     parserOptions: {
         parser: 'babel-eslint'

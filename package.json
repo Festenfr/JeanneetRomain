@@ -1,5 +1,5 @@
 {
-  "name": "drag",
+  "name": "nuxt-starter",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -7,27 +7,35 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lint": "npm run lint:js"
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint": "npm run lint:js",
+    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
+    "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/style-resources": "^1.0.0",
-    "core-js": "^3.6.5",
-    "glslify-loader": "^2.0.0",
-    "node-sass": "^4.14.1",
+    "core-js": "^3.9.1",
+    "dom-transform": "^2.1.0",
+    "graphql": "^15.5.0",
+    "graphql-request": "^3.4.0",
+    "gsap": "npm:@gsap/shockingly@^3.6.0",
     "normalize-wheel": "^1.0.1",
-    "nuxt": "^2.14.5",
+    "nuxt": "^2.15.2",
     "ogl": "0.0.60",
-    "sass-loader": "^10.0.2"
+    "three": "^0.124.0",
+    "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/svg": "^0.1.12",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.8.1",
-    "eslint-config-prettier": "^6.11.0",
+    "eslint": "^7.21.0",
+    "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-nuxt": "^1.0.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.1.1"
+    "eslint-plugin-prettier": "^3.3.1",
+    "node-sass": "^5.0.0",
+    "prettier": "^2.2.1",
+    "sass-loader": "^10.1.1"
   }
 }
